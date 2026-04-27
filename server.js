@@ -18,7 +18,7 @@ const db = new sqlite3.Database('./logistics.db', sqlite3.OPEN_READWRITE, (err) 
 // ==========================================
 
 // GET (Read) - отримати всіх клієнтів
-app.get('/client', (req, res) => {
+app.get('/clients', (req, res) => {
     db.all('SELECT * FROM clients', [], (err, rows) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json({ data: rows });
