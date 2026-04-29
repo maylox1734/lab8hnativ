@@ -28,7 +28,7 @@ app.get('/clients', (req, res) => {
 // POST (Create) - додати нового клієнта
 app.post('/clients', (req, res) => {
     const { client_name, phone } = req.body;
-    db.run(
+    db.un(
         'INSERT INTO clients (client_name, phone) VALUES (?, ?)',
         [client_name, phone],
         function (err) {
